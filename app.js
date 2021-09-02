@@ -16,14 +16,15 @@ const displayResult = (books) => {
     <h3>Showing <span>${bookArr.length}</span> of <span>${books.num_found}</span> books</h3>
     `
     //Showing found books
+    const result = document.getElementById('result');
+    result.textContent = '';
     if (books.num_found===0) {
         const error = document.getElementById('error');
         error.innerText='Please Enter a Valid Name'
     }
     else {
         error.innerText = '';
-        const result = document.getElementById('result');
-        result.textContent = '';
+        
         bookArr.forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col-md-4')
